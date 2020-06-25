@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang='en'><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>Emoji Support | 🎈Recux&#39;s Blog</title>
+<meta name="generator" content="Hugo 0.73.0" />
+
+
+
+<link rel="stylesheet" href="https://discat.online/css/eureka.min.css">
+
+<script defer src="/js/eureka.js"></script>
+<link
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet"
+    href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css">
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/js/all.min.js"></script>
+
+<meta itemprop="name" content="Emoji Support">
+<meta itemprop="description" content="Guide to emoji usage in Hugo">
+<meta itemprop="datePublished" content="2019-03-05T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-25T20:55:48&#43;08:00" />
+<meta itemprop="wordCount" content="118">
+
+
+
+<meta itemprop="keywords" content="emoji," />
+<meta property="og:title" content="Emoji Support | 🎈Recux&#39;s Blog" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:url" content="https://discat.online/post/emoji-support/" />
+
+
+<meta property="og:description"
+    content="Guide to emoji usage in Hugo" />
+
+<meta property="og:locale" content="en" />
+
+
+
+<meta property="og:site_name" content="🎈Recux&#39;s Blog" />
+
+
+
+
+
+<meta property="article:published_time" content="2019-03-05T00:00:00&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2020-06-25T20:55:48&#43;08:00" />
+
+
+
+<meta property="article:section" content="post" />
+
+
+<meta property="article:tag" content="emoji" />
+
+
+<body>
+    <header class="flex items-center fixed w-full min-h-16 z-50 bg-secondary-bg shadow-sm">
+        <div class="container mx-auto">
+            <div class="max-w-screen-xl"><nav class="flex items-center justify-between flex-wrap p-4">
+    <div class="flex items-center flex-shrink-0 text-primary-text mr-6">
+        <a href="/" class="font-semibold text-xl tracking-tight">🎈Recux&#39;s Blog</a>
+    </div>
+    <div class="block md:hidden">
+        <button id="navbar-btn" class="flex items-center px-3 py-2">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <div id="target" class="hidden block flex-grow md:flex md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0" id="current-url"
+            currenturl="/post/emoji-support/">
+            
+            <a href="/about/"
+                class="block mt-4 md:inline-block md:mt-0 hover:text-eureka mr-4 main-a">📌About</a>
+            
+            <a href="/post/"
+                class="block mt-4 md:inline-block md:mt-0 hover:text-eureka mr-4 main-a">📑Posts</a>
+            
+            <a href="/categories/"
+                class="block mt-4 md:inline-block md:mt-0 hover:text-eureka mr-4 main-a">📔Categories</a>
+            
+            <a href="/series/"
+                class="block mt-4 md:inline-block md:mt-0 hover:text-eureka mr-4 main-a">📚Series</a>
+            
+        </div>
+
+        <div class="relative inline-block pt-4 md:pt-0">
+            <div class=" relative cursor-pointer hover:text-eureka" id="lightDarkMode">
+                <i class="fas"></i>
+            </div>
+            <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+            </div>
+            <div class="absolute hidden left-0 md:left-auto right-auto md:right-0 bg-secondary-bg rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                id='lightDarkOptions'>
+                <div class="pl-6 pr-16 py-1 hover:text-eureka">Light</div>
+                <div class="pl-6 pr-16 py-1 hover:text-eureka">Dark</div>
+                <div class="pl-6 pr-16 py-1 hover:text-eureka">Auto</div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+
+    function getcolorscheme() {
+        let element = document.getElementById('lightDarkMode');
+        let targetDiv = document.getElementById('lightDarkOptions');
+        let targets = targetDiv.getElementsByTagName('div');
+        let screen = document.getElementById('is-open');
+
+
+        if (storageColorScheme != null) {
+            let old_icon = element.firstElementChild.getAttribute("data-icon")
+            let icon = switchMode(storageColorScheme)
+            element.firstElementChild.setAttribute("data-icon", icon)
+            element.firstElementChild.classList.remove('fa-' + old_icon)
+            element.firstElementChild.classList.add('fa-' + icon)
+        } else {
+            element.firstElementChild.setAttribute("data-icon", 'adjust')
+            element.firstElementChild.classList.add('fa-adjust')
+        }
+
+        element.addEventListener('click', () => {
+            targetDiv.classList.toggle('hidden')
+            screen.classList.toggle('hidden')
+        })
+
+        for (let target of targets) {
+            target.addEventListener('click', () => {
+                let icon = switchMode(target.innerHTML)
+                let old_icon = element.firstElementChild.getAttribute("data-icon")
+                element.firstElementChild.setAttribute("data-icon", icon)
+                element.firstElementChild.classList.remove('fa-' + old_icon)
+                element.firstElementChild.classList.add('fa-' + icon)
+
+                localStorage.setItem("lightDarkMode", target.innerHTML)
+
+                targetDiv.classList.toggle('hidden')
+                screen.classList.toggle('hidden')
+            })
+        }
+        screen.addEventListener('click', () => {
+            targetDiv.classList.toggle('hidden')
+            screen.classList.toggle('hidden')
+        })
+
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme()
+    });
+    
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let element = document.getElementById('navbar-btn');
+        let screen = document.getElementById('is-open-mobile');
+        let target = document.getElementById('target');
+        element.addEventListener('click', () => {
+
+            target.classList.toggle('hidden');
+            screen.classList.toggle('hidden')
+        })
+        screen.addEventListener('click', () => {
+            target.classList.toggle('hidden')
+            screen.classList.toggle('hidden')
+        })
+    });
+
+    function switchMenu() {
+        let currenturl = document.getElementById('current-url').getAttribute('currenturl')
+        if (currenturl.length > 1) {
+            currenturl = currenturl.substr(0, currenturl.length - 1)
+        }
+
+        sessionStorage.setItem("mainKey", currenturl)
+
+        let elements = document.getElementsByClassName('main-a');
+        for (let i in elements) {
+            if (typeof elements[i] === "object") {
+                let elementurl = elements[i].getAttribute('href')
+                if (elementurl.length > 1 && elementurl.charAt(elementurl.length - 1) == '/') {
+                    elementurl = elementurl.substr(0, elementurl.length - 1)
+                }
+                if (elementurl == sessionStorage.getItem("mainKey")) {
+                    elements[i].classList.add('text-eureka')
+                } else {
+                    elements[i].classList.remove('text-eureka')
+                }
+            }
+        }
+    }
+    switchMenu();
+
+    function switchMode(mode) {
+        let icon = ''
+        switch (mode) {
+            case 'Light':
+                window.matchMedia("(prefers-color-scheme: dark)").removeListener(func)
+                
+                icon = 'sun'
+                document.getElementsByTagName('html')[0].classList.remove('dark')
+                break
+            case 'Dark':
+                window.matchMedia("(prefers-color-scheme: dark)").removeListener(func)
+                
+                icon = 'moon'
+                document.getElementsByTagName('html')[0].classList.add('dark')
+                break
+            case 'Auto':
+                icon = 'adjust'
+                const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+                
+
+                window.matchMedia("(prefers-color-scheme: dark)").addListener(func)
+                
+
+                if (isDarkMode) {
+                    activateDarkMode()
+                } else {
+                    activateLightMode()
+                }
+                
+                break
+        }
+        return icon
+    }
+
+    function func(e) {
+        if (e.matches) {
+            activateDarkMode()
+        } else {
+            activateLightMode()
+        }
+    }
+
+    function activateDarkMode() {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+    function activateLightMode() {
+        document.getElementsByTagName('html')[0].classList.remove('dark')
+    }
+
+    
+</script></div>
+        </div>
+    </header>
+
+    <main class="min-h-screen pt-16">
+        
+        <div class="container mx-auto ">
+            <div class="max-w-screen-xl pt-12 lg:px-4 xl:px-8">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">Emoji Support</h1>
+        <div class="flex flex-wrap flex-row items-center my-2 text-tertiary-text">
+    <div class="mr-4 my-2">
+        <i class="fas fa-calendar"></i>
+        <span>Mar 5, 2019</span>
+    </div>
+    <div class="mr-4 my-2">
+        <span>&middot;</span>
+    </div>
+    <div class="mr-4 my-2">
+        <i class="fas fa-clock"></i>
+        <span>1 min read</span>
+    </div>
+    
+
+    
+</div>
+        <div class="my-4">
+            
+
+
+
+        </div>
+        <div class="content">
+            <p>Emoji can be enabled in a Hugo project in a number of ways.</p>
+<p>The <a href="https://gohugo.io/functions/emojify/"><code>emojify</code></a> function can be called directly in templates or <a href="https://gohugo.io/templates/shortcode-templates/#inline-shortcodes">Inline Shortcodes</a>.</p>
+<p>To enable emoji globally, set <code>enableEmoji</code> to <code>true</code> in your site’s <a href="https://gohugo.io/getting-started/configuration/">configuration</a> and then you can type emoji shorthand codes directly in content files; e.g.</p>
+<!-- raw HTML omitted -->
+<p>The <a href="http://www.emoji-cheat-sheet.com/">Emoji cheat sheet</a> is a useful reference for emoji shorthand codes.</p>
+<hr>
+<p><strong>N.B.</strong> The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">.emoji {
+font-family: Apple Color Emoji,Segoe UI Emoji,NotoColorEmoji,Segoe UI Symbol,Android Emoji,EmojiSymbols;
+}</code></pre></div>
+        </div>
+        
+        <div class="py-2">
+    
+    <a href="/tags/emoji/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 m-1 hover:text-eureka">#emoji</a>
+    
+</div>
+        
+        
+        <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <div class="w-24 h-24 bg-primary-bg rounded-full md:mr-4 ">
+            
+
+<img src="/authors/recux-author/avatar.jpg" class="w-full rounded-full" alt="Avatar">
+
+        </div>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/recux-author/" class="block font-bold text-lg pb-1 mb-2 border-b">Recux</a>
+            <span class="block pb-2">朝闻道，夕死可矣.</span>
+            
+            
+            <a href="mailto:jungzl@yandex.com" class="mr-1">
+                <i class="fas fa-envelope"></i>
+            </a>
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            
+            <a href="https://github.com/Recux/" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+        
+        <div class="flex flex-col md:flex-row md:justify-between my-4">
+    <div class="">
+        
+    </div>
+    <div class="md:text-right">
+        
+        <span class="font-bold my-1">Next</span>
+        <br />
+        <a href="/post/placeholder-text/" class="hover:text-eureka">
+            Placeholder Text
+        </a>
+        
+    </div>
+</div>
+        
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jungzl" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+    
+
+    
+    
+</div>
+<script>hljs.initHighlightingOnLoad();</script>
+
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <div class="container mx-auto">
+            <div class="max-w-screen-xl"><footer class="w-full text-center border-t border-gray-200 mb-4 p-4 pin-b text-sm text-tertiary-text">
+    <p>&copy; 2020 <a href="https://wcc.im">C. Wang</a> and <a href="https://ruiqima.com">R. Ma</a> &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</footer></div>
+        </div>
+    </footer>
+</body>
+
+</html>
