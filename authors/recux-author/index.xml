@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Hugo博客配置</title>
+      <link>https://discat.online/post/hugo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 25 Jun 2020 21:45:26 +0800</pubDate>
+      
+      <guid>https://discat.online/post/hugo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/</guid>
+      <description>配置hugo博客，自用版</description>
+    </item>
+    
+    <item>
       <title>Demo</title>
       <link>https://discat.online/post/demo/</link>
       <pubDate>Sun, 21 Jun 2020 21:12:33 +0800</pubDate>
