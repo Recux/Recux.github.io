@@ -1,0 +1,1 @@
+Tihs is just a hugo blog about me and my thoughts.🎈
