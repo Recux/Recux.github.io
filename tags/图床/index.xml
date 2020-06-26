@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>建站 on Recux&#39;s Blog</title>
-    <link>https://discat.online/categories/%E5%BB%BA%E7%AB%99/</link>
-    <description>Recent content in 建站 on Recux&#39;s Blog</description>
+    <title>图床 on Recux&#39;s Blog</title>
+    <link>https://discat.online/tags/%E5%9B%BE%E5%BA%8A/</link>
+    <description>Recent content in 图床 on Recux&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2020 &lt;a href=&#34;https://wcc.im&#34;&gt;C. Wang&lt;/a&gt; and &lt;a href=&#34;https://ruiqima.com&#34;&gt;R. Ma&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 25 Jun 2020 21:45:26 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Mar 2020 13:12:34 +0800</lastBuildDate>
     
-	<atom:link href="https://discat.online/categories/%E5%BB%BA%E7%AB%99/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://discat.online/tags/%E5%9B%BE%E5%BA%8A/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Hugo博客配置</title>
-      <link>https://discat.online/post/hugo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Thu, 25 Jun 2020 21:45:26 +0800</pubDate>
-      
-      <guid>https://discat.online/post/hugo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/</guid>
-      <description>配置hugo博客，自用版</description>
-    </item>
     
     <item>
       <title>Smms图床设置</title>
